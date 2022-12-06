@@ -1,0 +1,100 @@
+body {
+  background: #6f89b5;
+}
+
+.container {
+  border-radius: 50px;
+  margin: 40px 60px 40px 60px;
+  padding: 40px;
+  width: 810px;
+  background: #445174;
+}
+h1 {
+  font-size: 68px;
+  font-family: "Noto Serif JP", serif;
+  font-weight: 600;
+  color: #e9edf1;
+  text-shadow: 2px 2px 2px rgb(72, 65, 65);
+  padding: 0 0 30px 0;
+}
+h2,
+h3 {
+  font-size: 25px;
+  font-family: "Noto Serif JP", serif;
+  margin: 0 auto;
+  color: #b5e0f3;
+  line-height: 30px;
+}
+form {
+  margin: 30px auto;
+  width: 70%;
+}
+
+.search-button {
+  text-align: center;
+  font-family: "Noto Serif JP", serif;
+  color: #e9edf1;
+  background: #558abc;
+  border: 1px solid #445174;
+  border-radius: 8px;
+  padding: 7px 10px;
+}
+#currentlocation-button {
+  text-align: center;
+  font-family: "Noto Serif JP", serif;
+  color: #e9edf1;
+  background: #558abc;
+  border: 1px solid #445174;
+  border-radius: 8px;
+  padding: 7px 13px;
+}
+ul {
+  list-style: none;
+  margin: 40 auto;
+  padding: 0;
+}
+.weather-now {
+  font-family: "Noto Serif JP", serif;
+  margin: 0px auto;
+  padding: 20px 0 20px 0;
+  color: #e9edf1;
+}
+.temp-now {
+  font-size: 36px;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px rgb(72, 65, 65);
+}
+#celsiusTemp,
+#farenheitTemp {
+  color: #e9edf1;
+  text-decoration: none;
+}
+.first-parameter,
+.second-parameter,
+.third-parameter {
+  font-size: 14.8px;
+  color: #e9edf1;
+}
+
+.main-weather-pic {
+  display: block;
+  margin: 45px auto;
+  width: 120%;
+}
+.card-group {
+  text-align: center;
+  font-size: 25px;
+  font-family: "Cinzel", sans-serif;
+  font-weight: 700;
+}
+.card {
+  color: #e9edf1;
+  background: #558abc;
+  line-height: 50px;
+  border: 1px solid #445174;
+  border-radius: 25px;
+}
+.card-text {
+  color: #fff;
+  text-shadow: 2px 2px 2px rgb(72, 65, 65);
+}
