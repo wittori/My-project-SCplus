@@ -4,7 +4,7 @@ body {
 
 .container {
   border-radius: 50px;
-  margin: 40px 60px 40px 60px;
+  margin: 40px auto;
   padding: 40px;
   width: 810px;
   background: #445174;
