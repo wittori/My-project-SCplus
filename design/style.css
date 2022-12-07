@@ -98,3 +98,13 @@ ul {
   color: #fff;
   text-shadow: 2px 2px 2px rgb(72, 65, 65);
 }
+.author {
+  font-size: 18px;
+  font-family: "Noto Serif JP", serif;
+  text-align: center;
+  color: #e9edf1;
+}
+.github-link {
+  text-decoration: none;
+  color: #e9edf1;
+}
