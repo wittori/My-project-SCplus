@@ -5,14 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-    <title>Document</title>
+    <title>Weather app</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="design/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,54 +24,60 @@
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="crs/style.css" />
   </head>
   <body>
     <div class="container">
       <div class="row">
         <div class="col-6">
-          <h1 id="city-name">
-            New York
-            </h1>
-          <h2>
-            Today // Sat, 12/03, 13:20
-            <h2>
-            <br />
-            <h3 id="clouds">
-            Cloudy
-          </h3>
-           <br />
-           <button type="submit" id="currentlocation-button">Current location</button>
-          
+          <h1 id="city-name"></h1>
+          <h2>Last updated: <span id="date"></span></h2>
+          <br />
+          <h3 id="clouds">Cloudy</h3>
+          <br />
+          <button type="submit" id="current-location-button">
+            Current location
+          </button>
         </div>
         <div class="col-6">
           <form id="search-form">
             <div class="row">
               <div class="col-9">
-                <div class="which-city">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="city-input"
-                    aria-describedby="emailHelp"
-                    placeholder="Enter your city"
-                  />
-                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="city-input"
+                  placeholder="Enter your city"
+                  autocomplete="off"
+                />
               </div>
               <div class="col-1">
                 <button type="submit" class="search-button">Search</button>
-                
               </div>
               <div class="col-6 weather-now">
                 <ul>
-                <li class="temp-now"> <span id="temp-value">11</span> <a href=" " id="celsiusTemp">°C</a>|<a href=" " id="farenheitTemp">°F</a>
-                </li>
-                <li class="first-parameter"> Feels like: <span id="feels-like">86</span><a href=" " id="celsiusTemp">°C</a>|<a href=" " id="farenheitTemp">°F</a></li>
-                <li class="second-parameter">Humidity: <span id="humidity">77</span>%</li>
-                <li class="third-parameter">Wind: <span id="wind">18</span> km/h</li>
+                  <li class="temp-now">
+                    <strong id="temperature"></strong>
+                    <a href=" " id="celsiusTemp" class="active">°C</a>|<a
+                      href=" "
+                      id="farenheitTemp"
+                      >°F</a
+                    >
+                  </li>
+                  <li class="first-parameter">
+                    Feels like: <span id="feels-like"></span
+                    >°C</a>
+                  </li>
+                  <li class="second-parameter">
+                    Humidity: <span id="humidity"></span>%
+                  </li>
+                  <li class="third-parameter">
+                    Wind: <span id="wind"></span> km/h
+                  </li>
                 </ul>
               </div>
               <div class="col-6">
-              <img src="image/cloud.png" class="main-weather-pic" />
+                <img src="" id="icon" class="main-weather-pic" />
               </div>
             </div>
           </form>
@@ -164,8 +169,17 @@
         </div>
       </div>
     </div>
-    <p class="author"> <a href="https://github.com/wittori/My-project-SCplus" class ="github-link"> Open-source code</a> by Viktoria Fedash<p>
-    <script src="design/index.js"></script>
+    <p class="author">
+      <a
+        href="https://github.com/wittori/My-project-SCplus"
+        class="github-link"
+      >
+        Open-source code</a
+      >
+      by Viktoria Fedash
+    </p>
+    <p>
+      <script src="crs/app.js"></script>
+    </p>
   </body>
 </html>
-

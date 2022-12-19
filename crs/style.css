@@ -1,7 +1,6 @@
 body {
   background: #6f89b5;
 }
-
 .container {
   border-radius: 50px;
   margin: 40px auto;
@@ -39,7 +38,7 @@ form {
   border-radius: 8px;
   padding: 7px 10px;
 }
-#currentlocation-button {
+#current-location-button {
   text-align: center;
   font-family: "Noto Serif JP", serif;
   color: #e9edf1;
@@ -99,7 +98,7 @@ ul {
   text-shadow: 2px 2px 2px rgb(72, 65, 65);
 }
 .author {
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Noto Serif JP", serif;
   text-align: center;
   color: #e9edf1;

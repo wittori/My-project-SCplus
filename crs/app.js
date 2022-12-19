@@ -37,27 +37,11 @@ let h2 = document.querySelector("h2");
 let currentTime = new Date();
 h2.innerHTML = formatDate(currentTime);
 
-function displayCity(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector("#city-input").value;
-  let h1 = document.querySelector("#city-name");
-  h1.innerHTML = cityInput;
-  connectWeatherApp(cityInput);
-}
-let cityForm = document.querySelector("#search-form");
-cityForm.addEventListener("submit", displayCity);
-
-function connectWeatherApp(cityInput) {
-  let apiKey = `1d535cd63628722a1035b2bd7e064d64`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeatherConditions);
-}
-
 function displayWeatherConditions(response) {
   console.log(response.data);
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#clouds").innerHTML = response.data.weather[0].main;
-  document.querySelector("#temp-value").innerHTML = Math.round(
+  document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
   document.querySelector("#feels-like").innerHTML = Math.round(
@@ -67,8 +51,31 @@ function displayWeatherConditions(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+  celsiusTemperature = response.data.main.temp;
 }
-connectWeatherApp(`Kyiv`);
+
+function search(cityInput) {
+  let apiKey = `1d535cd63628722a1035b2bd7e064d64`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherConditions);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input").value;
+  let h1 = document.querySelector("#city-name");
+  h1.innerHTML = cityInput;
+  search(cityInput);
+}
+
+let cityForm = document.querySelector("#search-form");
+cityForm.addEventListener("submit", handleSubmit);
 
 function showPosition(position) {
   let lat = position.coords.latitude;
@@ -82,25 +89,27 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
-let locationButton = document.querySelector("#currentlocation-button");
+let locationButton = document.querySelector("#current-location-button");
 locationButton.addEventListener("click", getCurrentLocation);
 
 function celsiusToFahrenheit(event) {
   event.preventDefault();
-  let fahrenheitFormula = temp * (9 / 5) + 32;
-  document.querySelector("#temp-value").innerHTML =
+
+  let fahrenheitFormula = celsiusTemperature * (9 / 5) + 32;
+  document.querySelector("#temperature").innerHTML =
     Math.round(fahrenheitFormula);
-  console.log(fahrenheitFormula);
 }
 
 let tempF = document.querySelector("#farenheitTemp");
 tempF.addEventListener("click", celsiusToFahrenheit);
-let temp = document.querySelector("#temp-value");
+
+let celsiusTemperature = null;
 
 function fahrenheitToCelsius(event) {
   event.preventDefault();
-  document.querySelector("#temp-value").innerHTML = Math.round(temp);
-  console.log(temp);
+  document.querySelector("#temperature").innerHTML =
+    Math.round(celsiusTemperature);
 }
 let tempC = document.querySelector("#celsiusTemp");
 tempC.addEventListener("click", fahrenheitToCelsius);
+search(`Kyiv`);
