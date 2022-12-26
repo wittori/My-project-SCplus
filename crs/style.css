@@ -10,7 +10,7 @@ body {
 }
 h1 {
   font-size: 68px;
-  font-family: "Noto Serif JP", serif;
+  font-family: "Cinzel", sans-serif;
   font-weight: 600;
   color: #e9edf1;
   text-shadow: 2px 2px 2px rgb(72, 65, 65);
@@ -19,7 +19,7 @@ h1 {
 h2,
 h3 {
   font-size: 25px;
-  font-family: "Noto Serif JP", serif;
+  font-family: "Cinzel", sans-serif;
   margin: 0 auto;
   color: #b5e0f3;
   line-height: 30px;
@@ -31,7 +31,7 @@ form {
 
 .search-button {
   text-align: center;
-  font-family: "Noto Serif JP", serif;
+  font-family: "Cinzel", sans-serif;
   color: #e9edf1;
   background: #558abc;
   border: 1px solid #445174;
@@ -40,7 +40,7 @@ form {
 }
 #current-location-button {
   text-align: center;
-  font-family: "Noto Serif JP", serif;
+  font-family: "Cinzel", sans-serif;
   color: #e9edf1;
   background: #558abc;
   border: 1px solid #445174;
@@ -51,6 +51,7 @@ ul {
   list-style: none;
   margin: 40 auto;
   padding: 0;
+  line-height: 2;
 }
 .weather-now {
   font-family: "Noto Serif JP", serif;
@@ -80,28 +81,33 @@ ul {
   margin: 45px auto;
   width: 120%;
 }
-.card-group {
+.weather-forecast {
+  color: #e9edf1;
   text-align: center;
-  font-size: 25px;
   font-family: "Cinzel", sans-serif;
-  font-weight: 700;
-}
-.card {
-  color: #e9edf1;
-  background: #558abc;
-  line-height: 50px;
-  border: 1px solid #445174;
-  border-radius: 25px;
-}
-.card-text {
-  color: #fff;
   text-shadow: 2px 2px 2px rgb(72, 65, 65);
+  font-weight: 500;
+  opacity: 0.9px;
 }
+.weather-forecast-date {
+  font-size: 25px;
+}
+.weather-forecast-temperatures {
+  font-size: 20px;
+  margin: 5px;
+}
+.weather-forecast-temperature-min {
+  opacity: 0.6;
+  margin: 5px;
+}
+
 .author {
-  font-size: 16px;
-  font-family: "Noto Serif JP", serif;
+  font-size: 18.5px;
+  font-family: "Cinzel", sans-serif;
+  font-weight: 600;
   text-align: center;
   color: #e9edf1;
+  margin-top: -20px;
 }
 .github-link {
   text-decoration: none;
